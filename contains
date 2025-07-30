@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ -z "$2" ]]
+then	
+	#echo bad
+ exit 1	
+fi
+
+tempthing+=`echo "$1" | xargs -I {} -d " "  ./comp {} "$2" `
+#echo $tempthing
+
+if [ -n "$tempthing" ] 
+then
+	exit 0
+fi
+exit 1
