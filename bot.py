@@ -2,7 +2,6 @@ import os
 import time
 import discord
 from dotenv import load_dotenv
-import random
 import datetime
 def day_month_year():
     return datetime.datetime.now().strftime("%d-%m-%Y")
