@@ -6,12 +6,14 @@ import os, sys
 import torch
 
 
-image_path=sys.argv[1]
+cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+#image_path=sys.argv[1]
 if(sys.argv.__len__()>2): #second arg is confidence (optional)
     confidence_needed=float(sys.argv[2])
 else:
     confidence_needed=.8#80% arbitrarily
-frame = cv2.imread(image_path)#ngl this is some random pic rn but cv2 works with camera imports
+#frame = cv2.imread(image_path)#ngl this is some random pic rn but cv2 works with camera imports
 model = YOLO("./YOLOv8-crack-seg/yolov8n/weights/best.pt") #general crack detection
 #yolov8n is also being used because its the more "lightweight" version and can hopefully run
 #without any internet stuff

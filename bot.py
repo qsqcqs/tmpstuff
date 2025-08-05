@@ -3,6 +3,7 @@ import time
 import discord
 from dotenv import load_dotenv
 import datetime
+import id#id.py
 def day_month_year():
     return datetime.datetime.now().strftime("%d-%m-%Y")
 import sys
